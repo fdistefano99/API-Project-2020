@@ -187,8 +187,8 @@ void restoreText(char **state, int length, int ind1, int ind2){
 	}
 }
 
-/*this method is used to find the right state to restore, to find this state the method looks for the delete command closest to the state to restore and uses the state of
-the entire text saved by the delete command in the command history to restore the target state much faster*/
+/*this method is used to find the right state to restore, to find this state the method looks for the delete command closest to the state to restore and uses the 
+state of the entire text saved by the delete command in the command history to restore the target state much faster*/
 void moveInHistory(int mov, int todo){
 	if(todo==0){
 		virtualmove=virtualmove+mov;
@@ -284,8 +284,8 @@ void moveInHistory(int mov, int todo){
 	}
 }
 
-/*this method adds new textlines to the text or changes textlines that already exist saving the old textlines in the command history, if the current vector of textlines 
-is full it calls the resize method*/
+/*this method adds new textlines to the text or changes textlines that already exist saving the old textlines in the command history, if the current vector of 
+textlines is full it calls the resize method*/
 void change(int ind1, int ind2){
 	if(ind2>actualdim[0]-1){
 		resize(0);
