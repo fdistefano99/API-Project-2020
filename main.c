@@ -6,7 +6,7 @@
 
 #define LINESIZE 1026			//max length of a textline including the terminator character
 #define INITDIM 1024			//size of the first vectors of textlines or commands allocated
-#define HASHDIM 20				//max size of the super-vectors
+#define HASHDIM 20			//max size of the super-vectors
 
 //structure of a block of the commands history
 typedef struct{
@@ -24,7 +24,7 @@ void delete(int ind1, int ind2);
 void moveInHistory(int mov, int todo);
 
 char **hashText[HASHDIM];			//declaration of the super-vector of textlines
-command **hashHistory[HASHDIM];		//declaration of the super-vector of command history
+command **hashHistory[HASHDIM];			//declaration of the super-vector of command history
 command *actualCommand=NULL;
 int actualmax=-1, actualexp[2], actualdim[2], commcounter=-1, lastdel=-1, *futdel=NULL, virtualmove=-1, oldcommcounter=-1, noaction=1;
 const double sub=log2(INITDIM);
