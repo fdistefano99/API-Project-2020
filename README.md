@@ -10,5 +10,7 @@ The editor works through a command line interface and accepts the following comm
 * q ---> Exits the program
 
 ## Implementation
+The text lines and the command history are implemented both in the same way.
+
 
 
