@@ -4,8 +4,8 @@
 #include <math.h>
 #include <limits.h>
 
-#define LINESIZE 1026			//max length of a textline including the terminator character
-#define INITDIM 1024			//size of the first vectors of textlines or commands allocated
+#define LINESIZE 1026			//max length of a text line including the terminator character
+#define INITDIM 1024			//size of the first vectors of text lines or commands allocated
 #define HASHDIM 20			//max size of the super-vectors
 
 //structure of a block of the commands history
@@ -23,7 +23,7 @@ void print(int ind1, int ind2);
 void delete(int ind1, int ind2);
 void moveInHistory(int mov, int todo);
 
-char **hashText[HASHDIM];			//declaration of the super-vector of textlines
+char **hashText[HASHDIM];			//declaration of the super-vector of text lines
 command **hashHistory[HASHDIM];			//declaration of the super-vector of command history
 command *actualCommand=NULL;
 int actualmax=-1, actualexp[2], actualdim[2], commcounter=-1, lastdel=-1, *futdel=NULL, virtualmove=-1, oldcommcounter=-1, noaction=1;
@@ -73,7 +73,7 @@ int main(int argc, char *argv[]){
 	return 0;
 }
 
-/*this method allocates another vector of textlines or commands in the next block of the related super-vector, the size of the new vector allocated is twice that 
+/*this method allocates another vector of text lines or commands in the next block of the related super-vector, the size of the new vector allocated is twice that 
 of the previous vector*/
 void resize(int type){
 	actualexp[type]++;
@@ -86,7 +86,7 @@ void resize(int type){
 	actualdim[type]=2*actualdim[type];
 }
 
-//given the number of a textline, this method returns the position in the super-vector(pos[0]) and in the related vector of textlines(pos[1])
+//given the number of a text line, this method returns the position in the super-vector(pos[0]) and in the related vector of text lines(pos[1])
 void getPos(int ind, int pos[]){
 	if(ind<INITDIM){
 		pos[0]=0;
@@ -98,7 +98,7 @@ void getPos(int ind, int pos[]){
 	}
 }
 
-//this method is used to add a command in the command history, if the current vector of textlines is full it calls the resize method
+//this method is used to add a command in the command history, if the current vector of text lines is full it calls the resize method
 void addCommand(int ind1, int ind2, int oldmax, int newmax,char type){
 	if(commcounter>actualdim[1]-1){
 		resize(1);
@@ -284,8 +284,8 @@ void moveInHistory(int mov, int todo){
 	}
 }
 
-/*this method adds new textlines to the text or changes textlines that already exist saving the old textlines in the command history, if the current vector of 
-textlines is full it calls the resize method*/
+/*this method adds new text lines to the text or changes text lines that already exist saving the old text lines in the command history, if the current vector of 
+text lines is full it calls the resize method*/
 void change(int ind1, int ind2){
 	if(ind2>actualdim[0]-1){
 		resize(0);
@@ -331,7 +331,7 @@ void change(int ind1, int ind2){
 	}
 }
 
-//this method simply prints the textlines between the two addresses
+//this method simply prints the text lines between the two addresses
 void print(int ind1, int ind2){
 	if(virtualmove!=commcounter){
 		if(noaction==0){oldcommcounter=commcounter;}
@@ -361,7 +361,7 @@ void print(int ind1, int ind2){
 	}
 }
 
-//this method deletes the textlines between the two addresses and saves the state of the entire text in the command history
+//this method deletes the text lines between the two addresses and saves the state of the entire text in the command history
 void delete(int ind1, int ind2){
 	if(virtualmove!=commcounter){moveInHistory(-1, 1);}
 	commcounter++;
