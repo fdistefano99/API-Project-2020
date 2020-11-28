@@ -74,7 +74,7 @@ int main(int argc, char *argv[]){
 }
 
 /*this method allocates another vector of textlines or commands in the next block of the related super-vector, the size of the new vector allocated is twice that 
-of theprevious vector*/
+of the previous vector*/
 void resize(int type){
 	actualexp[type]++;
 	if(type==0){
