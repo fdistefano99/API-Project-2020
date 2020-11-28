@@ -5,8 +5,8 @@ The editor works through a command line interface and accepts the following comm
 * (add1, add2)c ---> Changes the text lines between add1 and add2, after this command there must be add2-add1+1 text lines and a last line formed by a single point. Please note that the line editor can only add text lines starting from the first empty line, that is, it cannot leave "holes"
 * (add1, add2)p ---> Prints the text lines between add1 and add2
 * (add1, add2)d ---> Deletes the text lines between add1 and add2
-* (num)u ---> Undo the last num commands
-* (num)r ---> Redo num commands
+* (num)u ---> Undoes the last num commands
+* (num)r ---> Redoes num commands
 * q ---> Exits the program
 
 ## Implementation
