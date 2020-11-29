@@ -86,7 +86,7 @@ void resize(int type){
 	actualdim[type]=2*actualdim[type];
 }
 
-//given the number of a text line, this method returns the position in the super-vector(pos[0]) and in the related vector of text lines(pos[1])
+//given the number of a text line, this method returns the position in the super-vector(pos[0]) and in the related vector of text lines or commands(pos[1])
 void getPos(int ind, int pos[]){
 	if(ind<INITDIM){
 		pos[0]=0;
