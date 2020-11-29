@@ -8,7 +8,7 @@
 #define INITDIM 1024			//size of the first vectors of text lines or commands allocated
 #define HASHDIM 20			//max size of the super-vectors
 
-//structure of a block of the commands history
+//structure of a block of the command history
 typedef struct{
 	int oldmax, newmax, ind1, ind2, oldlen, newlen, prevdel, *succdel;
 	char type, **oldtext, **newtext;
